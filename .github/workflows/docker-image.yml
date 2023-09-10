@@ -17,4 +17,4 @@ jobs:
 
 
       - name: Run Docker container
-        run: docker run -d eve_board_bot -e ${DISCORD_BOT_TOKEN}
+        run: docker run -d eve_board_bot -e DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}

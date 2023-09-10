@@ -21,4 +21,4 @@ jobs:
         run: |
           docker stop eve_board_bot
           docker rm eve_board_bot
-          docker run -d -e DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} --name eve_board_bot --force-recreate eve_board_bot:latest
+          docker run -d -e DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} --name eve_board_bot eve_board_bot:latest

@@ -14,12 +14,16 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t eve_board_bot:latest --build-arg DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} .
+        continue-on-error: true
+
+      - name: Docker RM
+        run: |
+          docker stop eve_board_bot
+          docker rm eve_board_bot
 
       - name: Run Docker container
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
-          docker stop eve_board_bot
-          docker rm eve_board_bot
           docker run -d -e DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} --name eve_board_bot eve_board_bot:latest
           docker rmi $(docker images --filter "dangling=true" -q --no-trunc)

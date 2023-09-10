@@ -13,10 +13,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t eve_board_bot --build-arg "DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }}" .
+        run: docker build -t eve_board_bot:latest --build-arg DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} .
+
 
 
       - name: Run Docker container
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-        run: docker run -d eve_board_bot
+        run: docker run -d -e ${{ secrets.DISCORD_BOT_TOKEN }} --name test eve_board_bot:latest

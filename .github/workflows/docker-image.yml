@@ -1,0 +1,19 @@
+name: Build and Run Docker on Self-Hosted Agent
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t eve_board_bot .
+
+      - name: Run Docker container
+        run: docker run -d eve_board_bot

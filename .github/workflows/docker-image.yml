@@ -20,4 +20,4 @@ jobs:
       - name: Run Docker container
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-        run: docker run -d -e ${{ secrets.DISCORD_BOT_TOKEN }} --name test eve_board_bot:latest
+        run: docker run -d -e DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} --name test eve_board_bot:latest

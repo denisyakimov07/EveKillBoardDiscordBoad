@@ -1,9 +1,6 @@
-import asyncio
-
 from quart import Quart, request
-from  Discord_events import *
 from discord_client import client
-from environment import get_env
+
 
 app = Quart(__name__)
 

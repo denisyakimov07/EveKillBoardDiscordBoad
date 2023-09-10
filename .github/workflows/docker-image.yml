@@ -19,4 +19,4 @@ jobs:
       - name: Run Docker container
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-        run: docker run -d eve_board_bot -n eve_board_bot
+        run: docker run -d eve_board_bot eve_board_bot

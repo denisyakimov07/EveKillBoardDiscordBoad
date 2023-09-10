@@ -14,12 +14,13 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t eve_board_bot:latest --build-arg DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} .
-        continue-on-error: true
+
 
       - name: Docker RM
         run: |
           docker stop eve_board_bot
           docker rm eve_board_bot
+        continue-on-error: true
 
       - name: Run Docker container
         env:

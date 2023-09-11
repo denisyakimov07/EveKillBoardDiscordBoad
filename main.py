@@ -12,6 +12,6 @@ async def before_serving():
     loop.create_task(client.connect())
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='bot.denisdns.com', port=5000)
 
 

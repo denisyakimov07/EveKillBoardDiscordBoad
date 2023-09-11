@@ -1,7 +1,6 @@
 from DB.db import db
 from loguru import logger
 
-
 def add_server_config(server_id: int):
     logger.info(f'Server {server_id}')
     try:

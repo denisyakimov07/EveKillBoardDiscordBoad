@@ -1,5 +1,7 @@
 import asyncio
-from  Discord_events import *
+import logging
+
+from Discord_events import *
 from discord_client import client
 from environment import get_env
 from http_server import app

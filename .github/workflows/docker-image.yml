@@ -15,7 +15,6 @@ jobs:
       - name: Build Docker image
         run: docker build -t eve_board_bot:latest --build-arg DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} .
 
-
       - name: Docker RM
         run: |
           docker stop eve_board_bot

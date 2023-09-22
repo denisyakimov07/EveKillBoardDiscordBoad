@@ -1,5 +1,3 @@
-import discord
-
 from DB.Creat_discord_server_settings import add_server_config
 from discord_client import client
 from loguru import logger

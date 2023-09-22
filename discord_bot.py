@@ -10,3 +10,4 @@ def start_discord_bot():
 async def send_message():
     channel = client.get_channel(786028610653651007)
     await channel.send(f'Test')
+

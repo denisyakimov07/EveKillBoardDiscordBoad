@@ -6,7 +6,6 @@ from discord_client import client
 from environment import get_env
 from http_server import app
 
-
 @app.before_serving
 async def before_serving():
     loop = asyncio.get_event_loop()

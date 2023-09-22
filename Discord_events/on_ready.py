@@ -1,7 +1,7 @@
 import discord
 
 from DB.Creat_discord_server_settings import add_server_config
-from discord_client import client, tree
+from discord_client import client
 from loguru import logger
 
 
@@ -14,5 +14,5 @@ async def on_ready():
     servers = list(client.guilds)
     for server in servers:
         add_server_config(int(server.id))
-    await tree.sync(guild=discord.Object(id=786028610653651004))
+    # await tree.sync(guild=discord.Object(id=786028610653651004))
     print("ready")

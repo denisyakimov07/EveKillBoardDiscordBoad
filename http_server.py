@@ -20,6 +20,7 @@ async def myJSON():
     else:
         return 'Failed - Not a JSON', 400
 
+
 @app.route('/server_text_channels/<int:server_id>', methods=['GET'])
 @basic_auth_required(username_key=get_env().HTTP_USERNAME, password_key=get_env().HTTP_PASSWORD)
 async def server_text_channels(server_id):

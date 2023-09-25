@@ -24,5 +24,5 @@ jobs:
       - name: Run Docker container
 
         run: |
-          docker run -d --net static_ip --ip 172.100.0.100 -e DATA_BASE_URL=${{ secrets.DATA_BASE_URL }} -e DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} -p 5000:5000 --restart=unless-stopped --name eve_board_bot eve_board_bot:latest
+          docker run -d --net static_ip --ip 172.100.0.100 -e DATA_BASE_URL=${{ secrets.DATA_BASE_URL }} -e HTTP_USERNAME=${{ secrets.HTTP_USERNAME }} -e HTTP_PASSWORD=${{ secrets.HTTP_PASSWORD }} -e DISCORD_BOT_TOKEN=${{ secrets.DISCORD_BOT_TOKEN }} -p 5000:5000 --restart=unless-stopped --name eve_board_bot eve_board_bot:latest
           docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
